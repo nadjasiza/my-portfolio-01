@@ -13,7 +13,6 @@
             word-break: keep-all; 
         }
 
-        /* 메인 컨테이너: 이름과 프로젝트 사이 간격을 350px로 넓게 설정 */
         .main-index { 
             padding: 120px 50px; 
             display: grid; 
@@ -21,7 +20,6 @@
             gap: 20px; 
         }
 
-        /* 이름 위치 조정: 첫 번째 프로젝트 숫자 '1'의 높이에 맞춤 */
         .sidebar { 
             grid-column: 1;
             padding-top: 138px; 
@@ -36,21 +34,21 @@
             line-height: 1.2;
         }
 
-        .item { margin-bottom: 45px; }
+        .item { margin-bottom: 40px; }
         .item-num { display: block; font-weight: bold; margin-bottom: 5px; }
         .item-name { display: block; margin-bottom: 2px; font-weight: normal; }
         .item-year { display: block; color: #888; font-size: 12px; }
+        .spacer { height: 40px; } /* 9번 항목 전 줄바꿈용 */
         
         .item-link { text-decoration: none; color: inherit; }
         .item-link:hover { opacity: 0.5; }
 
-        /* 하단 푸터 */
         footer { border-top: 1px solid #000; padding: 80px 50px; display: grid; grid-template-columns: 200px 250px 1fr; gap: 60px; margin-top: 200px; }
         .footer-col h3 { font-size: 13px; font-weight: bold; margin-bottom: 25px; text-transform: uppercase; }
         .footer-bottom { grid-column: 1 / -1; display: flex; justify-content: space-between; padding-top: 40px; margin-top: 40px; }
 
-        @media (max-width: 1000px) {
-            .main-index { grid-template-columns: 1fr 1fr 1fr; }
+        @media (max-width: 1100px) {
+            .main-index { grid-template-columns: 1fr 1fr; gap: 40px; }
             .sidebar { grid-column: 1 / -1; padding-top: 0; margin-bottom: 60px; }
         }
     </style>
@@ -69,49 +67,62 @@
             <div class="item">
                 <span class="item-num">1</span>
                 <a href="project-01.html" class="item-link">
-                    <span class="item-name">EBS 신규 플랫폼 런칭 및 고도화</span>
-                    <span class="item-year">2023~2025</span>
+                    <span class="item-name">EBS 신규 플랫폼<br>런칭 및 고도화</span>
+                    <span class="item-year">2025~2023</span>
                 </a>
             </div>
             <div class="item">
                 <span class="item-num">2</span>
-                <a href="project-02.html" class="item-link">
-                    <span class="item-name">공간 조성 및 활성화 추진</span>
-                    <span class="item-year">2018~2021</span>
-                </a>
-            </div>
-            <div class="item">
-                <span class="item-num">3</span>
-                <a href="#" class="item-link">
-                    <span class="item-name">B2G·B2B 전략 수주<br>RFP 기반 비즈니스 모델 설계</span>
-                </a>
+                <span class="item-name">공간 조성 및 활성화 추진</span>
+                <span class="item-year">2021~2018</span>
             </div>
         </div>
 
         <div class="column">
             <div class="column-title">II<br>Project<br>Archive</div>
+            <div class="item">
+                <span class="item-num">3</span>
+                <span class="item-name">B2G·B2B 전략 수주<br>RFP 기반 비즈니스<br>모델 설계</span>
             </div>
+            <div class="item">
+                <span class="item-num">4</span>
+                <span class="item-name">사용자 데이터 기반<br>서비스 고도화<br>& 인앱 콘텐츠 기획</span>
+            </div>
+            <div class="item">
+                <span class="item-num">5</span>
+                <span class="item-name">사업 전주기 운영</span>
+            </div>
+            <div class="item">
+                <span class="item-num">6</span>
+                <span class="item-name">브랜드 아이덴티티<br>구축 및 통합 전략</span>
+            </div>
+            <div class="item">
+                <span class="item-num">7</span>
+                <span class="item-name">O2O 통합 마케팅<br>& 오프라인 경험 디렉팅</span>
+            </div>
+            <div class="item">
+                <span class="item-num">8</span>
+                <span class="item-name">전략적 브랜드 커뮤니케이션<br>& 채널 관리</span>
+            </div>
+            
+            <div class="spacer"></div> <div class="item">
+                <span class="item-num">9</span>
+                <span class="item-name">도시기획 연구<br>& 공유공간 조성</span>
+            </div>
+            <div class="item">
+                <span class="item-num">10</span>
+                <span class="item-name">로컬 임팩트 사업<br>기획 및 운영</span>
+            </div>
+        </div>
 
         <div class="column">
             <div class="column-title">III<br>Article</div>
+            <div class="item"><span class="item-num">11</span>도시식물탐사</div>
+            <div class="item"><span class="item-num">12</span>지구의 금요극장</div>
+            <div class="item"><span class="item-num">13</span>Lost in Frenchlation</div>
+            <div class="item"><span class="item-num">14</span>서신교환</div>
         </div>
     </div>
 
-    <footer>
-        <div class="footer-col">
-            <h3>EXPERIENCE</h3>
-            <p>Korean Educational Broadcasting System, EBS CP<br>Coop. Seongbuk Sinna PM<br>Bachelor of Architecture</p>
-        </div>
-        <div class="footer-col">
-            <h3>Business Development & Project Manager</h3>
-            <p>ICT·로컬 비즈니스 분야에서 사업 개발과 브랜드 성장을 리드해 온 6년 차 프로젝트 매니저입니다...</p>
-        </div>
-        <div class="footer-bottom">
-            <div>송은별</div>
-            <div>2012-2026</div>
-            <div><a href="#" style="text-decoration:none; color:inherit;">Top ↑</a></div>
-        </div>
-    </footer>
-
-</body>
+    </body>
 </html>
