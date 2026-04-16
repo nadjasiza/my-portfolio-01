@@ -13,7 +13,7 @@
             word-break: keep-all; scroll-behavior: smooth;
         }
 
-        /* 1. 메인 인덱스 및 푸터 공통: 6분할 그리드 시스템 */
+        /* 메인 인덱스 및 푸터 공통: 6분할 그리드 */
         .main-index, footer { 
             padding: 0 50px 10px 50px;
             display: grid; 
@@ -21,23 +21,16 @@
             gap: 20px; 
         }
 
-        /* Eunbyeol SONG: 1번째 칸 */
-        .sidebar, .footer-sidebar { grid-column: 1; }
-        .sidebar { padding-top: 175px; }
-        .sidebar-name { font-weight: bold; display: block; margin-bottom: 13px; text-transform: uppercase; }
+        /* 1. 사이드바 (상단) */
+        .sidebar { grid-column: 1; padding-top: 175px; }
+        .sidebar-name, .footer-sidebar .sidebar-name { font-weight: bold; display: block; margin-bottom: 13px; text-transform: uppercase; }
         .sidebar-links div { margin-bottom: 3px; }
         .sidebar a, footer a { text-decoration: none; color: inherit; border-bottom: 1px solid #ccc; }
 
-        /* I Project Context: 3번째 칸 */
+        /* 2. 인덱스 컬럼 위치 */
         .column-context { grid-column: 3; }
-        
-        /* II Project Archive: 4번째 칸 */
         .column-archive-1 { grid-column: 4; }
-        
-        /* II Project Archive Cont: 5번째 칸 */
         .column-archive-2 { grid-column: 5; }
-
-        /* III Article: 6번째 칸 */
         .column-article { grid-column: 6; }
 
         .column-title { 
@@ -54,7 +47,7 @@
         .item-link { text-decoration: none; color: inherit; }
         .item-link:hover { opacity: 0.5; }
 
-        /* 2. 푸터 특화 설정 */
+        /* 3. 푸터 스타일링 */
         footer { 
             border-top: 1px solid #000; 
             padding: 60px 50px; 
@@ -62,19 +55,24 @@
             align-items: start;
         }
 
-        /* EXPERIENCE: 2번째와 3번째 칸 차지 */
+        /* [수정 포인트] 푸터 좌측 이름 영역: EXPERIENCE 타이틀과 수평을 맞춤 */
+        .footer-sidebar { 
+            grid-column: 1; 
+            padding-top: 5px; /* h3 타이틀의 높이와 맞추기 위한 미세 조정 */
+        }
+
+        /* EXPERIENCE 섹션: 2~3번째 칸 차지 */
         .footer-exp { grid-column: 2 / span 2; }
-
-        /* BD & PM 및 본문: 오른쪽 3칸 차지 (4번째부터 끝까지) */
-        .footer-desc-area { grid-column: 4 / span 3; }
-
-        #footer-anchor { scroll-margin-top: 50px; }
-        .footer-col h3 { font-size: 13px; font-weight: bold; margin-bottom: 25px; text-transform: uppercase; }
         .exp-text { line-height: 1.6; color: #1a1a1a; margin: 0; }
         .exp-item { margin-bottom: 15px; display: block; }
         .exp-item span { display: block; }
-        
+
+        /* BD & PM 및 본문 영역: 4~6번째 칸 차지 */
+        .footer-desc-area { grid-column: 4 / span 3; }
+        .footer-col h3 { font-size: 13px; font-weight: bold; margin-bottom: 25px; text-transform: uppercase; }
         .desc-text { line-height: 1.6; color: #1a1a1a; margin-bottom: 15px; }
+
+        #footer-anchor { scroll-margin-top: 50px; }
 
         .footer-bottom { 
             grid-column: 1 / -1; 
@@ -87,7 +85,7 @@
 
         @media (max-width: 1400px) {
             .main-index, footer { grid-template-columns: 1fr 1fr; }
-            .sidebar, .footer-sidebar { grid-column: 1; }
+            .sidebar, .footer-sidebar { grid-column: 1; padding-top: 20px; }
             .column-context, .footer-exp { grid-column: 2; }
         }
     </style>
