@@ -3,101 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eunbyeol Song | Portfolio</title>
+    <title>Eunbyeol Song | Index</title>
     <style>
-        /* 1. 기본 스타일 (Style de base) */
         * { box-sizing: border-box; }
         body { 
             font-family: "Helvetica", Arial, sans-serif; 
-            font-size: 13px; line-height: 1.5; color: #1a1a1a; 
+            font-size: 13px; line-height: 1.4; color: #1a1a1a; 
             background-color: #fcfcfc; margin: 0; padding: 0; 
-            word-break: keep-all; scroll-behavior: smooth;
+            word-break: keep-all; 
         }
 
-        /* 2. 상단 인덱스 섹션 (Section Index) */
-        #top { padding: 60px 50px 100px 50px; min-height: 80vh; }
-        .sidebar { position: fixed; left: 50px; top: 60px; width: 120px; z-index: 10; }
+        /* 메인 컨테이너: 이름과 프로젝트 사이 간격을 350px로 넓게 설정 */
+        .main-index { 
+            padding: 120px 50px; 
+            display: grid; 
+            grid-template-columns: 350px 220px 220px 220px; 
+            gap: 20px; 
+        }
+
+        /* 이름 위치 조정: 첫 번째 프로젝트 숫자 '1'의 높이에 맞춤 */
+        .sidebar { 
+            grid-column: 1;
+            padding-top: 138px; 
+        }
+        .sidebar div { margin-bottom: 3px; }
         .sidebar a { text-decoration: none; color: inherit; border-bottom: 1px solid #ccc; }
+
+        .column-title { 
+            font-weight: bold; 
+            margin-bottom: 100px; 
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .item { margin-bottom: 45px; }
+        .item-num { display: block; font-weight: bold; margin-bottom: 5px; }
+        .item-name { display: block; margin-bottom: 2px; font-weight: normal; }
+        .item-year { display: block; color: #888; font-size: 12px; }
         
-        .index-container { display: grid; grid-template-columns: 120px 180px 180px 180px; gap: 40px; margin-left: 200px; }
-        .column-title { font-weight: bold; margin-bottom: 50px; text-transform: uppercase; line-height: 1.2; }
-        .item { margin-bottom: 30px; }
-        .item-num { font-weight: bold; display: block; margin-bottom: 3px; }
+        .item-link { text-decoration: none; color: inherit; }
+        .item-link:hover { opacity: 0.5; }
 
-        /* 3. 프로젝트 상세 섹션 (Project Gallery) */
-        .project-section { border-top: 1px solid #eee; padding: 100px 50px; display: grid; grid-template-columns: 350px 1fr; gap: 50px; }
-        .project-info { position: sticky; top: 100px; height: fit-content; }
-        .project-media { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .media-placeholder { background: #eee; width: 100%; aspect-ratio: 4/3; position: relative; border: 1px solid #ddd; }
-        .media-placeholder::after { content: 'IMAGE / VIDEO'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #aaa; font-size: 10px; }
+        /* 하단 푸터 */
+        footer { border-top: 1px solid #000; padding: 80px 50px; display: grid; grid-template-columns: 200px 250px 1fr; gap: 60px; margin-top: 200px; }
+        .footer-col h3 { font-size: 13px; font-weight: bold; margin-bottom: 25px; text-transform: uppercase; }
+        .footer-bottom { grid-column: 1 / -1; display: flex; justify-content: space-between; padding-top: 40px; margin-top: 40px; }
 
-        /* 4. 푸터 스타일 (Footer) */
-        footer { border-top: 1px solid #000; padding: 60px 50px; display: grid; grid-template-columns: 200px 300px 1fr; gap: 50px; margin-top: 100px; }
-        .footer-col h3 { font-size: 13px; font-weight: bold; margin-bottom: 20px; text-transform: uppercase; }
-        .footer-bottom { grid-column: 1 / -1; display: flex; justify-content: space-between; border-top: 1px solid #eee; padding-top: 20px; margin-top: 40px; }
-
-        @media (max-width: 900px) {
-            .index-container, footer, .project-section { grid-template-columns: 1fr; margin-left: 0; }
-            .sidebar { position: static; margin-bottom: 50px; }
-            .project-media { grid-template-columns: 1fr; }
+        @media (max-width: 1000px) {
+            .main-index { grid-template-columns: 1fr 1fr 1fr; }
+            .sidebar { grid-column: 1 / -1; padding-top: 0; margin-bottom: 60px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="sidebar">
-        <div><a href="mailto:your-email@example.com">Mail</a></div>
-        <div><a href="https://github.com/nadjasiza">GitHub</a></div>
+    <div class="main-index">
+        <div class="sidebar">
+            <div><strong>Eunbyeol Song</strong></div>
+            <div><a href="mailto:your-email@example.com">Mail</a></div>
+            <div><a href="https://github.com/nadjasiza">GitHub</a></div>
+        </div>
+
+        <div class="column">
+            <div class="column-title">I<br>Project<br>Context</div>
+            <div class="item">
+                <span class="item-num">1</span>
+                <a href="project-01.html" class="item-link">
+                    <span class="item-name">EBS 신규 플랫폼 런칭 및 고도화</span>
+                    <span class="item-year">2023~2025</span>
+                </a>
+            </div>
+            <div class="item">
+                <span class="item-num">2</span>
+                <a href="project-02.html" class="item-link">
+                    <span class="item-name">공간 조성 및 활성화 추진</span>
+                    <span class="item-year">2018~2021</span>
+                </a>
+            </div>
+            <div class="item">
+                <span class="item-num">3</span>
+                <a href="#" class="item-link">
+                    <span class="item-name">B2G·B2B 전략 수주<br>RFP 기반 비즈니스 모델 설계</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="column-title">II<br>Project<br>Archive</div>
+            </div>
+
+        <div class="column">
+            <div class="column-title">III<br>Article</div>
+        </div>
     </div>
-
-    <section id="top">
-        <div class="index-container">
-            <div class="column">
-                <div class="column-title">I<br>Project<br>Context</div>
-                <div class="item"><span class="item-num">1</span><a href="#p1">지역 자산 기록화 사업</a></div>
-                <div class="item"><span class="item-num">2</span><a href="#p2">ICT 플랫폼 런칭 및 PMO</a></div>
-            </div>
-            <div class="column">
-                <div class="column-title">II<br>Project<br>Archive</div>
-                <div class="item"><span class="item-num">3</span>마을기업 협동조합 운영</div>
-                <div class="item"><span class="item-num">4</span>EBS ICT 교육 모델 개발</div>
-            </div>
-            <div class="column">
-                <div class="column-title">III<br>Article</div>
-                <div class="item"><span class="item-num">5</span>도시의 이끼 관찰기</div>
-                <div class="item"><span class="item-num">6</span>건축인류학적 시선</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="project-section" id="p1">
-        <div class="project-info">
-            <div class="column-title">Example Project 01</div>
-            <p><strong>Client</strong>: Local Gov<br><strong>Format</strong>: Archive, Exhibition<br><strong>Date</strong>: 2018-2021</p>
-            <p>도시 재개발 구역 내 커뮤니티 공간의 인류학적 가치를 아카이빙하고 로컬 콘텐츠를 기획했습니다. 본 프로젝트는 정주민들의 기억을 기록으로 변환하는 과정을 담고 있습니다.</p>
-        </div>
-        <div class="project-media">
-            <div class="media-placeholder"></div>
-            <div class="media-placeholder"></div>
-        </div>
-    </section>
 
     <footer>
         <div class="footer-col">
             <h3>EXPERIENCE</h3>
-            <p>Korean Educational Broadcasting System, EBS CP<br>
-               Coop. Seongbuk Sinna PM<br>
-               Bachelor of Architecture</p>
+            <p>Korean Educational Broadcasting System, EBS CP<br>Coop. Seongbuk Sinna PM<br>Bachelor of Architecture</p>
         </div>
         <div class="footer-col">
             <h3>Business Development & Project Manager</h3>
-            <p>ICT·로컬 비즈니스 분야에서 사업 개발과 브랜드 성장을 리드해 온 6년 차 프로젝트 매니저입니다. 건축을 전공하며 훈련했던 구조적이고 통합적으로 보려는 태도는 자연스럽게 도시에 대한 관심으로 확장되었고, 로컬 비즈니스 분야에서 다수의 사업을 기획하고 실행하며 프로젝트 매니지먼트 Project Management 경험을 만들었습니다.</p>
-            <p>플랫폼의 런칭부터 고도화에 이르는 전주기를 리드하며 B2G·B2B 파트너십 기반의 BD 역할을 수행, ‘밸류 체인 고도화’ 중심의 역량을 축적하였습니다. 중·장기적으로 브랜드의 성장에 기여하는 PM으로 업무 경험을 만들어가고 싶습니다.</p>
+            <p>ICT·로컬 비즈니스 분야에서 사업 개발과 브랜드 성장을 리드해 온 6년 차 프로젝트 매니저입니다...</p>
         </div>
         <div class="footer-bottom">
             <div>송은별</div>
             <div>2012-2026</div>
-            <div><a href="#top" style="text-decoration:none; color:inherit;">Top ↑</a></div>
+            <div><a href="#" style="text-decoration:none; color:inherit;">Top ↑</a></div>
         </div>
     </footer>
 
