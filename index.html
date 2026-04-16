@@ -1,11 +1,42 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Bienvenue chez Nadjasiza</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nadjasiza's Site</title>
+    <style>
+        body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 1.6; max-width: 900px; margin: 50px auto; padding: 0 20px; color: #333; }
+        .header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 50px; }
+        .intro { flex: 1; margin-right: 40px; }
+        .contact { width: 200px; font-size: 0.9em; }
+        .profile-img { width: 100px; height: 100px; border-radius: 50%; background: #ccc; margin-bottom: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; border-top: 1px solid #eee; padding-top: 30px; margin-top: 50px; }
+        h1 { font-size: 24px; margin-bottom: 20px; }
+        h2 { font-size: 14px; color: #999; text-transform: uppercase; margin-bottom: 15px; }
+        .grid-item { font-size: 14px; }
+        a { color: #0077aa; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
 </head>
 <body>
-    <h1>Bonjour ! C'est mon premier site web.</h1>
-    <p>델프 B2 합격을 향해 나아가는 공간입니다.</p>
+    <div class="header">
+        <div class="intro">
+            <h1><strong>Nadjasiza</strong></h1>
+            <p>건축적 시선으로 도시의 이끼를 기록하고, 프랑스어와 영화를 사랑하는 정주자입니다.</p>
+        </div>
+        <div class="contact">
+            <div class="profile-img"></div>
+            <div><strong>CONTACT</strong></div>
+            <div><a href="mailto:your-email@example.com">Email</a></div>
+            <div><a href="https://github.com/nadjasiza">GitHub</a></div>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div class="grid-item"><h2>Work</h2><p>Urban Planning<br>Business Dev</p></div>
+        <div class="grid-item"><h2>Bookshelf</h2><p>Barthes<br>Bataille</p></div>
+        <div class="grid-item"><h2>Cinema</h2><p>Rohmer<br>Wenders</p></div>
+        <div class="grid-item"><h2>Project</h2><p>City Moss Archive</p></div>
+    </div>
 </body>
 </html>
