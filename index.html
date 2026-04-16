@@ -28,8 +28,8 @@
         .sidebar-links div { margin-bottom: 3px; }
         .sidebar a, footer a { text-decoration: none; color: inherit; border-bottom: 1px solid #ccc; }
 
-        /* I Project Context & EXPERIENCE: 3번째 칸 */
-        .column-context, .footer-exp { grid-column: 3; }
+        /* I Project Context: 3번째 칸 */
+        .column-context { grid-column: 3; }
         
         /* II Project Archive: 4번째 칸 */
         .column-archive-1 { grid-column: 4; }
@@ -62,13 +62,18 @@
             align-items: start;
         }
 
+        /* EXPERIENCE: 2번째와 3번째 칸 차지 */
+        .footer-exp { grid-column: 2 / span 2; }
+
         /* BD & PM 및 본문: 오른쪽 3칸 차지 (4번째부터 끝까지) */
         .footer-desc-area { grid-column: 4 / span 3; }
 
         #footer-anchor { scroll-margin-top: 50px; }
         .footer-col h3 { font-size: 13px; font-weight: bold; margin-bottom: 25px; text-transform: uppercase; }
-        .exp-text { line-height: 1.2; color: #1a1a1a; margin: 0; }
-        .exp-text span { display: block; margin-bottom: 2px; }
+        .exp-text { line-height: 1.6; color: #1a1a1a; margin: 0; }
+        .exp-item { margin-bottom: 15px; display: block; }
+        .exp-item span { display: block; }
+        
         .desc-text { line-height: 1.6; color: #1a1a1a; margin-bottom: 15px; }
 
         .footer-bottom { 
@@ -150,11 +155,22 @@
 
         <div class="footer-col footer-exp">
             <h3>EXPERIENCE</h3>
-            <p class="exp-text">
-                <span>Educational Broadcasting System, CP</span>
-                <span>Coop. SeongbukSinna, PM</span>
-                <span>Bachelor of Architecture</span>
-            </p>
+            <div class="exp-text">
+                <div class="exp-item">
+                    <span class="txt-gray">2025﹣2023</span>
+                    <span>Korean Educational Broadcasting System</span>
+                    <span>Chief Producer</span>
+                </div>
+                <div class="exp-item">
+                    <span class="txt-gray">2022﹣2018</span>
+                    <span>Coop. SeongbukSinna</span>
+                    <span>Project Manager</span>
+                </div>
+                <div class="exp-item">
+                    <span class="txt-gray">2018﹣2012</span>
+                    <span>Bachelor of Architecture</span>
+                </div>
+            </div>
         </div>
 
         <div class="footer-col footer-desc-area">
