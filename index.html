@@ -13,11 +13,12 @@
             word-break: keep-all; scroll-behavior: smooth;
         }
 
-        /* 1. 전체 콘텐츠를 왼쪽으로 조금 더 이동 (첫 열 너비를 200px -> 170px로 축소) */
+        /* 1. 인덱스 그리드: 본문 전체를 왼쪽으로 한 칸 이동 (sidebar 너비 축소) */
         .main-index { 
             padding: 0 50px 120px 50px;
             display: grid; 
-            grid-template-columns: 170px 220px 220px 220px 220px; 
+            /* 첫 번째 열 너비를 최소화하여 본문을 왼쪽으로 밀착 */
+            grid-template-columns: 180px 220px 220px 220px 220px; 
             gap: 20px; 
         }
 
@@ -33,31 +34,43 @@
 
         .item { margin-bottom: 40px; }
         .item-num { display: block; font-weight: bold; margin-bottom: 5px; }
-        .item-name { display: block; margin-bottom: 3px; font-weight: normal; }
+        .item-name { display: block; margin-bottom: 3px; }
         .item-year { display: block; color: #888; font-size: 12px; margin-top: 2px; }
         
         .item-link { text-decoration: none; color: inherit; }
         .item-link:hover { opacity: 0.5; }
 
-        /* 푸터 설정 (인덱스 첫 열과 EXPERIENCE 정렬 유지) */
+        /* 2. 푸터 그리드: 스크린샷의 Groups, Point 위치 재현 */
         footer { 
             border-top: 1px solid #000; 
             padding: 60px 50px; 
             margin-top: 150px;
             display: grid;
-            grid-template-columns: 190px 220px 300px 1fr; 
-            gap: 20px;
+            /* Cargo 스타일의 비대칭 그리드 분할 */
+            grid-template-columns: 180px 220px 250px 1fr; 
+            gap: 30px;
+            align-items: start;
         }
         #footer-anchor { scroll-margin-top: 50px; }
-        .footer-col h3 { font-size: 13px; font-weight: bold; margin-bottom: 25px; text-transform: uppercase; }
+
+        .footer-col h3 { 
+            font-size: 13px; font-weight: bold; margin-bottom: 25px; 
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+
+        /* EXPERIENCE 항목 간격 및 한 줄 구성 */
         .exp-text { line-height: 1.2; color: #1a1a1a; margin: 0; }
         .exp-text span { display: block; margin-bottom: 2px; }
-        .footer-sidebar { grid-column: 1; }
-        .footer-exp { grid-column: 2; }
-        .footer-desc-area { grid-column: 3 / span 2; }
-        .project-manager-title { font-weight: bold; margin-bottom: 20px; display: block; }
+
         .desc-text { line-height: 1.6; color: #1a1a1a; margin-bottom: 15px; }
-        .footer-bottom { grid-column: 1 / -1; display: flex; justify-content: space-between; padding-top: 60px; font-size: 12px; }
+
+        .footer-bottom { 
+            grid-column: 1 / -1; 
+            display: flex; 
+            justify-content: space-between; 
+            padding-top: 80px; 
+            font-size: 12px;
+        }
         .footer-bottom a { text-decoration: none; color: inherit; }
 
         @media (max-width: 1300px) {
@@ -106,76 +119,37 @@
                 <span class="item-name">사용자 데이터 기반<br>서비스 고도화<br>& 인앱 콘텐츠 기획</span>
                 <span class="item-year">2025-2023</span>
             </div>
-            <div class="item">
-                <span class="item-num">5</span>
-                <span class="item-name">사업 전주기 운영</span>
-                <span class="item-year">2025-2024</span>
-            </div>
-            <div class="item">
-                <span class="item-num">6</span>
-                <span class="item-name">브랜드 아이덴티티<br>구축 및 통합 전략</span>
-                <span class="item-year">2024-2023</span>
-            </div>
-            <div class="item">
-                <span class="item-num">7</span>
-                <span class="item-name">O2O 통합 마케팅<br>& 오프라인 경험 디렉팅</span>
-                <span class="item-year">2024-2023</span>
-            </div>
-            <div class="item">
-                <span class="item-num">8</span>
-                <span class="item-name">전략적 브랜드<br>커뮤니케이션<br>& 채널 관리</span>
-                <span class="item-year">2024-2023</span>
-            </div>
+            <div class="item"><span class="item-num">5</span><span class="item-name">사업 전주기 운영</span><span class="item-year">2025-2024</span></div>
+            <div class="item"><span class="item-num">6</span><span class="item-name">브랜드 아이덴티티<br>구축 및 통합 전략</span><span class="item-year">2024-2023</span></div>
+            <div class="item"><span class="item-num">7</span><span class="item-name">O2O 통합 마케팅<br>& 오프라인 경험 디렉팅</span><span class="item-year">2024-2023</span></div>
+            <div class="item"><span class="item-num">8</span><span class="item-name">전략적 브랜드<br>커뮤니케이션<br>& 채널 관리</span><span class="item-year">2024-2023</span></div>
         </div>
 
         <div class="column">
             <div class="column-title" style="visibility: hidden;">II<br>Cont.</div>
-            <div class="item">
-                <span class="item-num">9</span>
-                <span class="item-name">도시기획 연구<br>& 공유공간 조성</span>
-                <span class="item-year">2021-2018</span>
-            </div>
-            <div class="item">
-                <span class="item-num">10</span>
-                <span class="item-name">로컬 임팩트 사업<br>기획 및 운영</span>
-                <span class="item-year">2021-2019</span>
-            </div>
+            <div class="item"><span class="item-num">9</span><span class="item-name">도시기획 연구<br>& 공유공간 조성</span><span class="item-year">2021-2018</span></div>
+            <div class="item"><span class="item-num">10</span><span class="item-name">로컬 임팩트 사업<br>기획 및 운영</span><span class="item-year">2021-2019</span></div>
         </div>
 
         <div class="column">
             <div class="column-title">III<br>Article</div>
-            <div class="item">
-                <span class="item-num">11</span>
-                <span class="item-name">도시식물탐사</span>
-                <span class="item-year">2026-2023</span>
-            </div>
-            <div class="item">
-                <span class="item-num">12</span>
-                <span class="item-name">지구의 금요극장</span>
-                <span class="item-year">2026</span>
-            </div>
-            <div class="item">
-                <span class="item-num">13</span>
-                <span class="item-name">Lost in Frenchlation</span>
-                <span class="item-year">2025</span>
-            </div>
-            <div class="item">
-                <span class="item-num">14</span>
-                <span class="item-name">서신교환</span>
-                <span class="item-year">2023</span>
-            </div>
+            <div class="item"><span class="item-num">11</span><span class="item-name">도시식물탐사</span><span class="item-year">2026-2023</span></div>
+            <div class="item"><span class="item-num">12</span><span class="item-name">지구의 금요극장</span><span class="item-year">2026</span></div>
+            <div class="item"><span class="item-num">13</span><span class="item-name">Lost in Frenchlation</span><span class="item-year">2025</span></div>
+            <div class="item"><span class="item-num">14</span><span class="item-name">서신교환</span><span class="item-year">2023</span></div>
         </div>
     </div>
 
     <footer id="footer-anchor">
-        <div class="footer-sidebar">
+        <div class="footer-col">
             <span class="sidebar-name">Eunbyeol SONG</span>
             <div class="sidebar-links">
-                <div><a href="mailto:your-email@example.com">Mail</a></div>
-                <div><a href="https://github.com/nadjasiza">GitHub</a></div>
+                <div><a href="#top">About</a></div>
+                <div><a href="mailto:your-email@example.com">Mail</a>, <a href="https://github.com/nadjasiza">GitHub</a></div>
             </div>
         </div>
-        <div class="footer-col footer-exp">
+
+        <div class="footer-col">
             <h3>EXPERIENCE</h3>
             <p class="exp-text">
                 <span>Korean Educational Broadcasting System, EBS CP</span>
@@ -183,10 +157,17 @@
                 <span>Bachelor of Architecture</span>
             </p>
         </div>
-        <div class="footer-col footer-desc-area">
-            <span class="project-manager-title">Business Development & Project Manager</span>
-            <p class="desc-text">ICT·로컬 비즈니스 분야에서 사업 개발과 브랜드 성장을 리드해 온 6년 차 프로젝트 매니저입니다...</p>
-            </div>
+
+        <div class="footer-col">
+            <h3>Business Development & Project Manager</h3>
+        </div>
+
+        <div class="footer-col">
+            <p class="desc-text">ICT·로컬 비즈니스 분야에서 사업 개발과 브랜드 성장을 리드해 온 6년 차 프로젝트 매니저입니다. 건축을 전공하며 훈련했던 구조적이고 통합적으로 보려는 태도는 자연스럽게 도시에 대한 관심으로 확장되었고, 로컬 비즈니스 분야에서 다수의 사업을 기획하고 실행하며 프로젝트 매니지먼트 Project Management 경험을 만들었습니다.</p>
+            <p class="desc-text">이후 팬데믹을 기점으로 빠르게 재편되는 기술의 사회적 흐름에 대응하고 지속적으로 브랜드의 성장을 견인하는 ICT 분야에서 PMO Project Management Office 로 역할을 확장하여, 플랫폼의 런칭부터 고도화에 이르는 플랫폼 초기 2년의 전주기를 리드하였습니다. 이 과정에서 B2G·B2B 파트너십 기반의 BD Business Development 역할을 동시에 수행하며 서비스를 확장하고, 브랜드 성장에 기여하는 ‘밸류 체인 고도화’ 중심의 기획 역량을 축적하였습니다.</p>
+            <p class="desc-text">비즈니스의 결과가 다시 새로운 기회로 연결되는 선순환 구조를 관리하며 중·장기적으로 브랜드의 성장에 기여하는 PM으로 업무 경험을 만들어가고 싶습니다.</p>
+        </div>
+
         <div class="footer-bottom">
             <div>송은별</div>
             <div>2012-2026</div>
